@@ -1,0 +1,23 @@
+#########
+#  ECS  #
+#########
+
+> Add Pagination to views
+	- get_reviews
+	- get_category
+	- get tags
+
+> Add Sitemap
+
+> Add Cache
+
+> Add ToS, Privacy Policy, About... pages using FlatPages
+
+
+##############
+#	Issues	 #
+##############
+
+before uploading to Git
+> Set SlugField items to "unique=true"
+> Learn admin and apply it to existing files

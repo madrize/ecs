@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+			<div>
+				<img src="/{{product.image.url}}" />
+			</div>
+			<div>{{product.title}}</div>
+			<div>{{product.description}}</div>
+			<div>${{product.price}}</div>
+			
+			<div>
+				<form action="/add-to-cart/" method="POST">{% csrf_token %}
+						<div>
+							{{form.quantity}}
+						</div>
+					
+						<div>
+							<input type="hidden" name="product_slug" id="id_product_slug" value="{{product.slug}}" />
+						</div>
+					<input type="submit" value="add to cart" />
+				</form>
+			</div>
+			<div>
+				<a href="/post-review/?s={{product.slug}}">Post Review<a/>
+			</div>
+			<div>
+				<a href="/reviews/{{product.slug}}/">Reviews<a/>
+			</div>
+
+
+{% endblock %}

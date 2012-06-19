@@ -1,0 +1,30 @@
+<html>
+<head>
+
+</head>
+<body>
+<div>
+
+	<div>
+		<ul>
+			<li><a href="">Home</a></li>
+			<li><a href="/categories/">Categories</a></li>
+			<li><a href="/tags/">Tag cloud</a></li>
+			<li><a href="/shopping-cart/">Cart</a></li>
+			<li><a href="/search/">Search</a></li>
+			{% if user.is_authenticated %}
+			<li><a href="/logout/">Logout ({{user.username}})</a></li>
+			{% else %}
+			<li><a href="/register/">Register</a></li>
+			<li><a href="/login/">Login</a></li>
+			{% endif %}
+		</ul>
+	</div>
+	
+	{% block page_content %}
+	
+	{% endblock %}
+
+</div>
+</body>
+</html>

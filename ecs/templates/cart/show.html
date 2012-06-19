@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+	{% if items %}
+
+	<div>
+		Welcome {{user}}
+		<br />
+		You shopping cart :
+	</div>
+	
+		<!-- Display user's shopping cart -->
+		{% for i in items %}
+			<div>
+				<div>
+					item : {{i}}
+				</div>
+				<div>
+					${{i.price}}
+				</div>
+				<div>
+					quantity :{{i.quantity}}
+				</div>
+				<div>
+					<form action="." method="POST">{% csrf_token %}
+					<input type="hidden" value="{{i.id}}" name="item_id" />
+					<input type="submit" value="remove" />
+					</form>
+				</div>
+			</div>
+		{% endfor %}
+	
+	{% else %}
+	
+		<div>
+			Your cart is empty
+		</div>
+	
+	{% endif %}
+
+{% endblock %}

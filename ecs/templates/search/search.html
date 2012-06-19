@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+	<form action="." method="POST">{% csrf_token %}
+		{% for form_item in form %}
+			<div>
+				{{form_item.label}} - {{form_item}}
+			</div>
+		{% endfor %}
+		<input type="submit" value="Search" />
+	</form>
+	
+	{% for item in results %}
+		<div>
+			<a href="{{item.get_absolute_url}}">{{item}}</a>
+		</div>
+	{% endfor %}
+
+{% endblock %}

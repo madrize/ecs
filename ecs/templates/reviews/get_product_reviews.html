@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+	<div>Reviews for {{product.title}}</div>
+
+	<div>
+	{% for rev in reviews %}
+	
+		<div><a href="{{rev.get_absolute_url}}">{{rev.title}}</a></div>
+		<div>{{rev.content}}</div>
+	
+	{% endfor %}
+	</div>
+	
+{% endblock %}

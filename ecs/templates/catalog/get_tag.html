@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+			Tag : {{tag.title}}
+			<div>
+			{% for product in products %}
+				{{ product.title }}
+			{% endfor %}
+			</div>
+
+{% endblock %}

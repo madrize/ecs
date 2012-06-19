@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+	{% for cat in categories %}
+		<div>
+			<a href="{{cat.get_absolute_url}}">{{cat.title}}</a>
+		</div>
+	{% endfor %}
+
+{% endblock %}

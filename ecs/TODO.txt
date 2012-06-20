@@ -12,12 +12,3 @@
 > Add Cache
 
 > Add ToS, Privacy Policy, About... pages using FlatPages
-
-
-##############
-#	Issues	 #
-##############
-
-before uploading to Git
-> Set SlugField items to "unique=true"
-> Learn admin and apply it to existing files
